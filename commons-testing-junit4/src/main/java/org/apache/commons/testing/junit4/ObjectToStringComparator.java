@@ -20,6 +20,11 @@ package org.apache.commons.testing.junit4;
 import java.io.Serializable;
 import java.util.Comparator;
 
+/**
+ * Compares objects based on their {@code toString()} values.
+ * 
+ * @since 1.0.0
+ */
 public final class ObjectToStringComparator implements Comparator<Object>, Serializable {
 
     private static final long serialVersionUID = 1L;

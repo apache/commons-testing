@@ -81,12 +81,12 @@ public abstract class AbstractAvailableLocalesTest {
     private final Locale locale;
 
     @Rule
-    public final SetDefaultLocaleTestRule rule;
+    public final DefaultLocaleTestRule rule;
 
     public AbstractAvailableLocalesTest(final Locale locale)  {
         super();
         this.locale = locale;
-        this.rule = new SetDefaultLocaleTestRule(locale);
+        this.rule = new DefaultLocaleTestRule(locale);
     }
 
     public Locale getLocale() {
