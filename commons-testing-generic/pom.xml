@@ -1,76 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements. See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership. The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements. See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership. The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License. You may obtain a copy of the License at
 
-        http://www.apache.org/licenses/LICENSE-2.0
+  http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-testing-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
+  <parent>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-testing-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../</relativePath>
+  </parent>
 
-    <artifactId>commons-testing-generic</artifactId>
-    <packaging>jar</packaging>
+  <artifactId>commons-testing-generic</artifactId>
+  <packaging>jar</packaging>
 
-    <name>Apache Commons Testing for Generic test code</name>
-    <description>Apache Commons Testing for Generic test code</description>
+  <name>Apache Commons Testing Generic</name>
+  <description>Apache Commons Testing for Generic Test Code</description>
 
-    <properties>
-      <commons.osgi.symbolicName>org.apache.commons.testing.generic</commons.osgi.symbolicName>
-    </properties>
+  <properties>
+    <testingParentDir>${basedir}/..</testingParentDir>
+    <commons.osgi.symbolicName>org.apache.commons.testing.generic</commons.osgi.symbolicName>
+  </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <executions>
-                  <execution>
-                      <id>test-jar</id>
-                      <!-- Also expose abstract test classes -->
-                      <goals>
-                          <goal>test-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+          <instructions>
+            <Bundle-SymbolicName>org.apache.commons.testing.generic</Bundle-SymbolicName>
+            <Automatic-Module-Name>org.apache.commons.testing.generic</Automatic-Module-Name>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
-            <plugin>
-              <groupId>org.apache.felix</groupId>
-              <artifactId>maven-bundle-plugin</artifactId>
-              <configuration>
-                <instructions>
-                  <Bundle-SymbolicName>org.apache.commons.testing.generic</Bundle-SymbolicName>
-                  <Automatic-Module-Name>org.apache.commons.testing.generic</Automatic-Module-Name>
-                </instructions>
-              </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <distributionManagement>
+    <site>
+      <id>commonstesting-generic-site</id>
+      <url>scm:svn:${commons.scmPubUrl}/generic/</url>
+    </site>
+  </distributionManagement>
 
-    <distributionManagement>
-      <site>
-        <id>commonstesting-generic-site</id>
-        <url>scm:svn:${commons.scmPubUrl}/generic/</url>
-      </site>
-    </distributionManagement>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>${checkstyle.plugin.version}</version>
+        <configuration>
+          <configLocation>${testingParentDir}/checkstyle.xml</configLocation>
+          <suppressionsLocation>${testingParentDir}/checkstyle-suppressions.xml</suppressionsLocation>
+          <enableRulesSummary>false</enableRulesSummary>
+          <propertyExpansion>basedir=${basedir}</propertyExpansion>
+          <propertyExpansion>licensedir=${testingParentDir}/checkstyle-header.txt</propertyExpansion>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>${findbugs.plugin.version}</version>
+        <configuration>
+          <fork>true</fork>
+          <jvmArgs>-Duser.language=en</jvmArgs>
+          <threshold>Normal</threshold>
+          <effort>Default</effort>
+          <excludeFilterFile>${testingParentDir}/findbugs-exclude-filter.xml</excludeFilterFile>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 
 </project>

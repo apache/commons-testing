@@ -26,6 +26,7 @@
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-testing-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../</relativePath>
   </parent>
 
   <artifactId>commons-testing-junit4</artifactId>
@@ -35,25 +36,12 @@
   <description>Apache Commons Testing for JUnit4</description>
 
   <properties>
+    <testingParentDir>${basedir}/..</testingParentDir>
     <commons.osgi.symbolicName>org.apache.commons.testing.junit4</commons.osgi.symbolicName>
   </properties>
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>test-jar</id>
-            <!-- Also expose abstract test classes -->
-            <goals>
-              <goal>test-jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
       <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
@@ -85,4 +73,32 @@
     </dependency>
   </dependencies>
 
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>${checkstyle.plugin.version}</version>
+        <configuration>
+          <configLocation>${testingParentDir}/checkstyle.xml</configLocation>
+          <suppressionsLocation>${testingParentDir}/checkstyle-suppressions.xml</suppressionsLocation>
+          <enableRulesSummary>false</enableRulesSummary>
+          <propertyExpansion>basedir=${basedir}</propertyExpansion>
+          <propertyExpansion>licensedir=${testingParentDir}/checkstyle-header.txt</propertyExpansion>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>${findbugs.plugin.version}</version>
+        <configuration>
+          <fork>true</fork>
+          <jvmArgs>-Duser.language=en</jvmArgs>
+          <threshold>Normal</threshold>
+          <effort>Default</effort>
+          <excludeFilterFile>${testingParentDir}/findbugs-exclude-filter.xml</excludeFilterFile>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>

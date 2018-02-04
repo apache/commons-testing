@@ -53,7 +53,7 @@
       <h3>5.BUILDING</h3>
       <h4>Building a Release</h4>
       <p>
-        Commons Testing targets Java 8.
+        Commons Testing targets Java 7.
       </p>
     </section>
   </body>

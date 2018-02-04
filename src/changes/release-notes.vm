@@ -43,7 +43,7 @@ This document contains the release notes for the ${version} version of Apache Co
 Commons Testing is a set of utility functions and reusable components that should be of use in any 
 Java environment.
 
-Commons Testing 1.0.0 targets Java 8.
+Commons Testing 1.0.0 targets Java 7.
 
 $introduction.replaceAll("(?<!\015)\012", "
 ").replaceAll("(?m)^ +","")

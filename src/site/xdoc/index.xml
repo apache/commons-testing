@@ -39,7 +39,7 @@ and various <a href="project-reports.html">project reports</a> are provided.
 The JavaDoc API documents are available online:
 </p>
 <ul>
-<li>The <a href="javadocs/api-1.0.0/index.html">current stable release 1.0.0</a> [Java 8]</li>
+<li>The <a href="javadocs/api-1.0.0/index.html">current stable release 1.0.0</a> [Java 7]</li>
 </ul>
 <p>
 The <a href="source-repository.html">git repository</a> can be
@@ -87,7 +87,7 @@ The <a href="mail-lists.html">commons mailing lists</a> act as the main support 
 The user list is suitable for most library usage queries.
 The dev list is intended for the development discussion.
 Please remember that the lists are shared between all commons components,
-so prefix your email by [lang].
+so prefix your email by [testing].
 </p>
 <p>
 Bug reports and enhancements are also welcomed via the <a href="issue-tracking.html">JIRA</a> issue tracker.
