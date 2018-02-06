@@ -29,15 +29,15 @@
     <relativePath>../</relativePath>
   </parent>
 
-  <artifactId>commons-testing-junit4</artifactId>
+  <artifactId>commons-testing-junit4-mongodb</artifactId>
   <packaging>jar</packaging>
 
-  <name>Apache Commons Testing for JUnit4</name>
-  <description>Apache Commons Testing for JUnit4</description>
+  <name>Apache Commons Testing for JUnit4 and MongoDB</name>
+  <description>Apache Commons Testing for JUnit4 and MongoDB</description>
 
   <properties>
     <testingParentDir>${basedir}/..</testingParentDir>
-    <commons.osgi.symbolicName>org.apache.commons.testing.junit4</commons.osgi.symbolicName>
+    <commons.osgi.symbolicName>org.apache.commons.testing.junit4.mongodb.mongodb.mongodb</commons.osgi.symbolicName>
   </properties>
 
   <build>
@@ -47,8 +47,8 @@
         <artifactId>maven-bundle-plugin</artifactId>
         <configuration>
           <instructions>
-            <Bundle-SymbolicName>org.apache.commons.testing.junit4</Bundle-SymbolicName>
-            <Automatic-Module-Name>org.apache.commons.testing.junit4</Automatic-Module-Name>
+            <Bundle-SymbolicName>org.apache.commons.testing.junit4.mongodb.mongodb.mongodb</Bundle-SymbolicName>
+            <Automatic-Module-Name>org.apache.commons.testing.junit4.mongodb.mongodb.mongodb</Automatic-Module-Name>
           </instructions>
         </configuration>
       </plugin>
@@ -65,16 +65,20 @@
   <dependencies>
     <dependency>
       <groupId>org.apache.commons</groupId>
-      <artifactId>commons-testing-generic</artifactId>
+      <artifactId>commons-testing-junit4</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongodb-driver</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
+      <groupId>org.mongodb</groupId>
+      <artifactId>bson</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.flapdoodle.embed</groupId>
+      <artifactId>de.flapdoodle.embed.mongo</artifactId>
     </dependency>
   </dependencies>
 
