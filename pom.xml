@@ -37,7 +37,6 @@
 
   <issueManagement>
     <system>jira</system>
-    <!-- WIP -->
     <url>http://issues.apache.org/jira/browse/TESTING</url>
   </issueManagement>
 
