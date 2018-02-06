@@ -70,7 +70,7 @@ public class MongoDbTestRule implements TestRule {
         this(portSystemPropertyName, DEFAULT_MONGODB_VERSION);
     }
 
-    public MongoDbTestRule(final String portSystemPropertyName, Main mongoDbVersion) {
+    public MongoDbTestRule(final String portSystemPropertyName, final Main mongoDbVersion) {
         this.portSystemPropertyName = Objects.requireNonNull(portSystemPropertyName, "portSystemPropertyName");
         this.mongoDbVersion = mongoDbVersion;
     }
