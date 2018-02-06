@@ -57,8 +57,8 @@
 
   <distributionManagement>
     <site>
-      <id>commonstesting-junit4-site</id>
-      <url>scm:svn:${commons.scmPubUrl}/junit4/</url>
+      <id>commonstesting-junit4-mongodb-site</id>
+      <url>scm:svn:${commons.scmPubUrl}/junit4-mongodb/</url>
     </site>
   </distributionManagement>
 

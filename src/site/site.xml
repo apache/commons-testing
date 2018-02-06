@@ -26,8 +26,6 @@
     <menu name="Testing">
       <item name="Overview" href="/index.html" />
       <item name="Download" href="/download_lang.cgi" />
-      <item name="Javadoc (1.0.0)" href="javadocs/api-1.0.0/index.html" />
-      <item name="Javadoc (latest)" href="javadocs/api-release/index.html" />
     </menu>
 
     <menu name="Development">
@@ -41,9 +39,9 @@
 
     <menu name="Components" inherit="top" img="icon-cog">
       <item name="Parent" href="index.html" />
-      <item name="Generic" href="commons-testing-generic/index.html" />
-      <item name="JUnit 4" href="commons-testing-junit4/index.html" />
-      <item name="JUnit 4 for MongoDB" href="commons-testing-junit4-mongodb/index.html" />
+      <item name="Generic" href="generic/index.html" />
+      <item name="JUnit 4" href="junit4/index.html" />
+      <item name="JUnit 4 for MongoDB" href="junit4-mongodb/index.html" />
     </menu>
 
   </body>

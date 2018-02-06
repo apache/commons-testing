@@ -22,7 +22,8 @@
     <section name="Proposal for the Apache Commons Component">
       <subsection name="(0) Rationale">
         <p>
-          Gather useful and reusable code like JUnit rules.
+          A multi-module project focused on providing code for testing applications
+          using various testing frameworks with an initial focus on JUnit 4.
         </p>
       </subsection>
       <subsection name="(1) Scope of the Package">
