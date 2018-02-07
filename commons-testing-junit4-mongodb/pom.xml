@@ -37,7 +37,7 @@
 
   <properties>
     <testingParentDir>${basedir}/..</testingParentDir>
-    <commons.osgi.symbolicName>org.apache.commons.testing.junit4.mongodb.mongodb.mongodb</commons.osgi.symbolicName>
+    <commons.osgi.symbolicName>org.apache.commons.testing.junit4.mongodb</commons.osgi.symbolicName>
   </properties>
 
   <build>
@@ -47,8 +47,8 @@
         <artifactId>maven-bundle-plugin</artifactId>
         <configuration>
           <instructions>
-            <Bundle-SymbolicName>org.apache.commons.testing.junit4.mongodb.mongodb.mongodb</Bundle-SymbolicName>
-            <Automatic-Module-Name>org.apache.commons.testing.junit4.mongodb.mongodb.mongodb</Automatic-Module-Name>
+            <Bundle-SymbolicName>org.apache.commons.testing.junit4.mongodb</Bundle-SymbolicName>
+            <Automatic-Module-Name>org.apache.commons.testing.junit4.mongodb</Automatic-Module-Name>
           </instructions>
         </configuration>
       </plugin>
