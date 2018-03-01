@@ -15,7 +15,7 @@
  * limitations under the license.
  */
 
-package org.apache.logging.log4j.junit;
+package org.apache.commons.testing.junit4;
 
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
@@ -41,6 +41,10 @@ import org.junit.runners.model.Statement;
  */
 public class SecurityManagerTestRule implements TestRule {
 
+    private final SecurityManager securityManager;
+
+    private SecurityManager securityManagerBefore;
+    
     /**
      * Constructs a new instance with the given {@link SecurityManager}.
      * <p>
@@ -61,22 +65,9 @@ public class SecurityManagerTestRule implements TestRule {
         this.securityManager = securityManager;
     }
 
-    private SecurityManager securityManagerBefore;
-    private final SecurityManager securityManager;
-
     @Override
     public Statement apply(final Statement base, final Description description) {
         return new Statement() {
-            @Override
-            public void evaluate() throws Throwable {
-                before();
-                try {
-                    base.evaluate();
-                } finally {
-                    after();
-                }
-            }
-
             private void after() {
                 System.setSecurityManager(securityManagerBefore);
             }
@@ -85,6 +76,16 @@ public class SecurityManagerTestRule implements TestRule {
                 securityManagerBefore = System.getSecurityManager();
                 System.setSecurityManager(securityManager);
 
+            }
+
+            @Override
+            public void evaluate() throws Throwable {
+                before();
+                try {
+                    base.evaluate();
+                } finally {
+                    after();
+                }
             }
         };
     }
