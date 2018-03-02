@@ -23,7 +23,7 @@ package org.apache.commons.testing;
 public final class Closer {
 
     /**
-     * Closes an AutoCloseable or ignores if {@code null}.
+     * Closes an AutoCloseable or ignores it if {@code null}.
      *
      * @param closeable
      *            the resource to close; may be null
