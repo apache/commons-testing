@@ -31,8 +31,8 @@ import org.apache.commons.testing.Closer;
 public final class AvailableServerPortFinder {
 
     /**
-     * The minimum server currentMinPort number for IPv4.
-     * Set at 1100 to avoid returning privileged currentMinPort numbers.
+     * The minimum server currentMinPort number for IPv4. Set at 1100 to avoid returning privileged currentMinPort
+     * numbers.
      */
     public static final int MIN_PORT_NUMBER = 1100;
 
@@ -42,9 +42,8 @@ public final class AvailableServerPortFinder {
     private static AtomicInteger currentMinPort = new AtomicInteger(MIN_PORT_NUMBER);
 
     /**
-     * We'll hold open the lowest port in this process
-     * so parallel processes won't use the same block
-     * of ports. They'll go up to the next block.
+     * We'll hold open the lowest port in this process so parallel processes won't use the same block of ports. They'll
+     * go up to the next block.
      */
     private static final ServerSocket LOCK;
 
@@ -78,9 +77,11 @@ public final class AvailableServerPortFinder {
     /**
      * Checks to see if a specific port is available.
      *
-     * @param port the port number to check for availability
+     * @param port
+     *            the port number to check for availability
      * @return {@code true} if the port is available, or {@code false} if not
-     * @throws IllegalArgumentException is thrown if the port number is out of range
+     * @throws IllegalArgumentException
+     *             is thrown if the port number is out of range
      */
     public static synchronized boolean available(final int port) throws IllegalArgumentException {
         if (port < currentMinPort.get() || port > MAX_PORT_NUMBER) {
@@ -110,12 +111,13 @@ public final class AvailableServerPortFinder {
     }
 
     /**
-     * Gets the next available port starting at the lowest number. This is the preferred
-     * method to use. The port return is immediately marked in use and doesn't rely on the caller actually opening
-     * the port.
+     * Gets the next available port starting at the lowest number. This is the preferred method to use. The port return
+     * is immediately marked in use and doesn't rely on the caller actually opening the port.
      *
-     * @throws IllegalArgumentException is thrown if the port number is out of range
-     * @throws NoSuchElementException if there are no ports available
+     * @throws IllegalArgumentException
+     *             is thrown if the port number is out of range
+     * @throws NoSuchElementException
+     *             if there are no ports available
      * @return the available port
      */
     public static synchronized int getNextAvailable() {
@@ -127,9 +129,12 @@ public final class AvailableServerPortFinder {
     /**
      * Gets the next available port starting at a given from port.
      *
-     * @param fromPort the from port to scan for availability
-     * @throws IllegalArgumentException is thrown if the port number is out of range
-     * @throws NoSuchElementException if there are no ports available
+     * @param fromPort
+     *            the from port to scan for availability
+     * @throws IllegalArgumentException
+     *             is thrown if the port number is out of range
+     * @throws NoSuchElementException
+     *             if there are no ports available
      * @return the available port
      */
     public static synchronized int getNextAvailable(final int fromPort) {
