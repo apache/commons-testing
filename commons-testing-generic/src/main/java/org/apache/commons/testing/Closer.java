@@ -55,6 +55,7 @@ public final class Closer {
     }
 
     private Closer() {
+        // Do not allow instances.
     }
 
 }
