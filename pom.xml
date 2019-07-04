@@ -33,7 +33,7 @@
     Apache Commons Testing, a package of Java utility classes for testing.
   </description>
 
-  <url>http://commons.apache.org/proper/commons-testing/</url>
+  <url>https://commons.apache.org/proper/commons-testing/</url>
 
   <issueManagement>
     <system>jira</system>
