@@ -37,7 +37,7 @@
 
   <issueManagement>
     <system>jira</system>
-    <url>http://issues.apache.org/jira/browse/TESTING</url>
+    <url>https://issues.apache.org/jira/browse/TESTING</url>
   </issueManagement>
 
   <scm>
