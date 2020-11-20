@@ -54,7 +54,6 @@ public class CopyFileTestRule extends ExternalResource {
 
     CopyFileTestRule(final String sourceFilePath, final TemporaryFolder targetTemporaryFolder,
             final String targetFilePath) {
-        super();
         this.sourceFilePath = Objects.requireNonNull(sourceFilePath, "sourceFilePath");
         this.targetTemporaryFolder = Objects.requireNonNull(targetTemporaryFolder, "targetTemporaryFolder");
         this.targetFileName = Objects.requireNonNull(targetFilePath, "targetFileName");

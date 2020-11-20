@@ -33,7 +33,6 @@ public class DefaultLocaleTestRule implements TestRule {
     private final Locale locale;
 
     public DefaultLocaleTestRule(final Locale locale) {
-        super();
         this.locale = locale;
     }
 
