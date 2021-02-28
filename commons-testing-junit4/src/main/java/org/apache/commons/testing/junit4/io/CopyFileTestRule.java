@@ -28,14 +28,14 @@ import org.junit.rules.TemporaryFolder;
 
 /**
  * Copies a file as a JUnit TestRule.
- * 
+ *
  * @since 1.0.0
  */
 public class CopyFileTestRule extends ExternalResource {
 
     /**
      * Creates a test rule that will copy a file to a given temporary folder.
-     * 
+     *
      * @param sourceFilePath
      *            the file to copy.
      * @param targetTemporaryFolder

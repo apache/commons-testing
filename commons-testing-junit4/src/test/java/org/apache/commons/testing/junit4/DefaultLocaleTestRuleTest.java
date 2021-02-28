@@ -25,7 +25,7 @@ import org.junit.Test;
 
 /**
  * Sets the default {@code Locale} to the given Locale for the duration of the test.
- * 
+ *
  * @since 1.0.0
  */
 public class DefaultLocaleTestRuleTest {

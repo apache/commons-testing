@@ -25,7 +25,7 @@ import org.junit.runners.model.Statement;
 
 /**
  * Sets the default {@code Locale} to the given locale for the duration of the test.
- * 
+ *
  * @since 1.0.0
  */
 public class DefaultLocaleTestRule implements TestRule {

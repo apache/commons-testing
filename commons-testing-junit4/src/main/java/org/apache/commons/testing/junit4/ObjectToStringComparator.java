@@ -22,7 +22,7 @@ import java.util.Comparator;
 
 /**
  * Compares objects based on their {@code toString()} values.
- * 
+ *
  * @since 1.0.0
  */
 public final class ObjectToStringComparator implements Comparator<Object>, Serializable {

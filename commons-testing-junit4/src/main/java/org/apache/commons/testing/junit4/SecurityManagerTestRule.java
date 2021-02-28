@@ -28,7 +28,7 @@ import org.junit.runners.model.Statement;
  * Using a security manager can mess up other tests so this is best used from integration tests (classes that end in
  * "IT" instead of "Test" and "TestCase".)
  * </p>
- * 
+ *
  * <p>
  * When this test rule is evaluated, it will:
  * </p>
@@ -44,7 +44,7 @@ public class SecurityManagerTestRule implements TestRule {
     private final SecurityManager securityManager;
 
     private SecurityManager securityManagerBefore;
-    
+
     /**
      * Constructs a new instance with the given {@link SecurityManager}.
      * <p>
@@ -56,7 +56,7 @@ public class SecurityManagerTestRule implements TestRule {
      * <li>Evaluate the test statement.</li>
      * <li>Reset the current SecurityManager to the one from step (1).</li>
      * </ol>
-     * 
+     *
      * @param securityManager
      *            the {@link SecurityManager} to use while running a test.
      */
