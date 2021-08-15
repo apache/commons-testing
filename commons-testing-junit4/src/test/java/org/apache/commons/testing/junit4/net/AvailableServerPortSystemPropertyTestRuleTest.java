@@ -29,7 +29,7 @@ public class AvailableServerPortSystemPropertyTestRuleTest {
     private static final String NAME = AvailableServerPortSystemPropertyTestRuleTest.class.getName();
 
     @Rule
-    public AvailableServerPortSystemPropertyTestRule rule = new AvailableServerPortSystemPropertyTestRule(NAME);
+    public final AvailableServerPortSystemPropertyTestRule rule = new AvailableServerPortSystemPropertyTestRule(NAME);
 
     @Test
     public void test() throws IOException {

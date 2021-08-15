@@ -30,9 +30,9 @@ import org.junit.rules.TemporaryFolder;
 
 public class CopyFileTestRuleTest {
 
-    public TemporaryFolder temporaryFolder = new TemporaryFolder();
+    public final TemporaryFolder temporaryFolder = new TemporaryFolder();
 
-    public CopyFileTestRule copyFileTestRule = CopyFileTestRule.create("src/test/resources/test.txt", temporaryFolder,
+    public final CopyFileTestRule copyFileTestRule = CopyFileTestRule.create("src/test/resources/test.txt", temporaryFolder,
             "test-dest.txt");
 
     @Rule

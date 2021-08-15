@@ -39,7 +39,7 @@ public final class AvailableServerPortFinder {
     /**
      * Incremented to the next lowest available port when getNextAvailable() is called.
      */
-    private static AtomicInteger currentMinPort = new AtomicInteger(MIN_PORT_NUMBER);
+    private static final AtomicInteger CURRENT_MIN_PORT = new AtomicInteger(MIN_PORT_NUMBER);
 
     /**
      * We'll hold open the lowest port in this process so parallel processes won't use the same block of ports. They'll
@@ -60,7 +60,6 @@ public final class AvailableServerPortFinder {
             try {
                 ss = new ServerSocket(port);
             } catch (final Exception e) {
-                ss = null;
                 port += 200;
             }
         }
@@ -71,7 +70,7 @@ public final class AvailableServerPortFinder {
                 close();
             }
         });
-        currentMinPort.set(port + 1);
+        CURRENT_MIN_PORT.set(port + 1);
     }
 
     /**
@@ -84,7 +83,7 @@ public final class AvailableServerPortFinder {
      *             is thrown if the port number is out of range
      */
     public static synchronized boolean available(final int port) throws IllegalArgumentException {
-        if (port < currentMinPort.get() || port > MAX_PORT_NUMBER) {
+        if (port < CURRENT_MIN_PORT.get() || port > MAX_PORT_NUMBER) {
             throw new IllegalArgumentException("Invalid start currentMinPort: " + port);
         }
 
@@ -121,8 +120,8 @@ public final class AvailableServerPortFinder {
      * @return the available port
      */
     public static synchronized int getNextAvailable() {
-        final int next = getNextAvailable(currentMinPort.get());
-        currentMinPort.set(next + 1);
+        final int next = getNextAvailable(CURRENT_MIN_PORT.get());
+        CURRENT_MIN_PORT.set(next + 1);
         return next;
     }
 
@@ -138,7 +137,7 @@ public final class AvailableServerPortFinder {
      * @return the available port
      */
     public static synchronized int getNextAvailable(final int fromPort) {
-        if (fromPort < currentMinPort.get() || fromPort > MAX_PORT_NUMBER) {
+        if (fromPort < CURRENT_MIN_PORT.get() || fromPort > MAX_PORT_NUMBER) {
             throw new IllegalArgumentException("From port number not in valid range: " + fromPort);
         }
 
