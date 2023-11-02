@@ -130,7 +130,7 @@
     <commons.module.name>org.apache.commons.testing</commons.module.name>
     <!-- Current 1.x release series -->
     <commons.release.version>1.0.0</commons.release.version>
-    <commons.release.desc>(Java 7)</commons.release.desc>
+    <commons.release.desc>(Java 7 or above)</commons.release.desc>
     <commons.jira.id>TESTING</commons.jira.id>
     <commons.jira.pid>????</commons.jira.pid>
 
