@@ -44,7 +44,6 @@ Apache Commons Testing Parent POM
 ===================
 
 [![Build Status](https://travis-ci.org/apache/commons-testing-parent.svg?branch=master)](https://travis-ci.org/apache/commons-testing-parent)
-[![Coverage Status](https://codecov.io/gh/apache/commons-testing-parent/branch/master/graph/badge.svg?branch=master)](https://app.codecov.io/gh/apache/commons-testing-parent)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.apache.commons/commons-testing-parent/badge.svg?gav=true)](https://maven-badges.herokuapp.com/maven-central/org.apache.commons/commons-testing-parent/?gav=true)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
