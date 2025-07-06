@@ -46,7 +46,10 @@
     <url>https://gitbox.apache.org/repos/asf?p=commons-testing.git</url>
     <tag>TESTING-1.0.0</tag>
   </scm>
-
+  <ciManagement>
+    <system>GitHub</system>
+    <url>https://github.com/apache/commons-testing/actions</url>
+  </ciManagement>
   <developers>
     <developer>
       <id>ggregory</id>
