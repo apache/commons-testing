@@ -41,7 +41,7 @@
   </issueManagement>
 
   <scm>
-    <connection>scm:git:http://gitbox.apache.org/repos/asf/commons-testing.git</connection>
+    <connection>scm:git:https://gitbox.apache.org/repos/asf/commons-testing.git</connection>
     <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/commons-testing.git</developerConnection>
     <url>https://gitbox.apache.org/repos/asf?p=commons-testing.git</url>
     <tag>TESTING-1.0.0</tag>
