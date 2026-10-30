@@ -22,10 +22,12 @@ import java.util.Locale;
 import java.util.concurrent.ConcurrentSkipListSet;
 
 import org.junit.Assert;
+import org.junit.Test;
 
 public class ObjectToStringComparatorTest {
 
-    public static void afterClass() {
+    @Test
+    public void testAvailableLocales() {
         final ConcurrentSkipListSet<Locale> expected = createSet();
         final Locale[] availableLocales = Locale.getAvailableLocales();
         Collections.addAll(expected, availableLocales);
